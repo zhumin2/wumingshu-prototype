@@ -1,0 +1,128 @@
+/* ============ 无名树设计变量（活泼暖色风） ============ */
+page {
+  --bg: #FFF7EA;
+  --surface: #FFFFFF;
+  --surface2: #FFFDF6;
+  --text: #3A342A;
+  --sub: #837964;
+  --border: #F0E4CC;
+  --green: #3E9B44;
+  --green-deep: #2C7A33;
+  --green-bg: #E7F4E2;
+  --sun: #FFA51E;
+  --sun-deep: #A96400;
+  --sun-bg: #FFF0D2;
+  --berry: #F4685C;
+  --berry-deep: #C04338;
+  --berry-bg: #FFE9E3;
+  --sky: #3FA8C9;
+  --sky-deep: #1F7E9C;
+  --sky-bg: #E1F3F9;
+  --plum: #8E6FD0;
+  --plum-deep: #6B4EAF;
+  --plum-bg: #EFE8FB;
+
+  background: var(--bg);
+  color: var(--text);
+  font-size: 28rpx;
+  font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* ============ 共享组件样式 ============ */
+.cardp {
+  background: var(--surface);
+  border: 2rpx solid var(--border);
+  border-radius: 32rpx;
+  padding: 24rpx;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 22rpx;
+  font-weight: 600;
+  padding: 4rpx 18rpx;
+  border-radius: 99rpx;
+  margin-right: 10rpx;
+  margin-bottom: 6rpx;
+}
+.tg { background: var(--green-bg); color: var(--green-deep); }
+.ts { background: var(--sun-bg); color: var(--sun-deep); }
+.tb { background: var(--berry-bg); color: var(--berry-deep); }
+.tk { background: var(--sky-bg); color: var(--sky-deep); }
+.tp { background: var(--plum-bg); color: var(--plum-deep); }
+
+.pill {
+  font-size: 22rpx;
+  font-weight: 700;
+  padding: 8rpx 22rpx;
+  border-radius: 99rpx;
+  flex-shrink: 0;
+}
+.pg { background: var(--green); color: #FFFFFF; }
+.pb { background: var(--berry-bg); color: var(--berry-deep); }
+.ps { background: var(--sky-bg); color: var(--sky-deep); }
+
+.bar {
+  height: 12rpx;
+  border-radius: 99rpx;
+  background: var(--border);
+  overflow: hidden;
+  flex: 1;
+}
+.bar-i {
+  display: block;
+  height: 100%;
+  border-radius: 99rpx;
+  background: var(--green);
+}
+.bar-i.hot { background: var(--berry); }
+
+.emo {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44rpx;
+  flex-shrink: 0;
+}
+.eg { background: var(--green-bg); }
+.es { background: var(--sun-bg); }
+.eb { background: var(--berry-bg); }
+.ek { background: var(--sky-bg); }
+
+.sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30rpx 4rpx 18rpx;
+}
+.sec-t { font-size: 32rpx; font-weight: 700; }
+.more { font-size: 24rpx; color: var(--sub); }
+
+.price { font-size: 38rpx; font-weight: 700; color: var(--green-deep); }
+.price-s { font-size: 24rpx; font-weight: 400; color: var(--sub); }
+
+.btn-p {
+  background: var(--green);
+  color: #FFFFFF;
+  border-radius: 34rpx;
+  padding: 26rpx;
+  font-size: 33rpx;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+.btn-g {
+  border: 2rpx solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 30rpx;
+  padding: 20rpx;
+  font-size: 27rpx;
+  text-align: center;
+}
+.hv { opacity: 0.8; }
+
+.wrap { padding: 24rpx 28rpx 40rpx; }

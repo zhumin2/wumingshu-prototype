@@ -1,0 +1,83 @@
+<view class="wrap">
+
+  <!-- 问候 -->
+  <view class="greet">
+    <view class="ava">🌳</view>
+    <view class="who">
+      <text class="who-b">{{greeting}}，{{user.name}} {{greetIcon}}</text>
+      <text class="who-s">2026 秋季活动季 · 会员第 {{user.vipYear}} 年</text>
+    </view>
+    <view class="bell" hover-class="hv" bindtap="onBell">🔔<view class="bdot"></view></view>
+  </view>
+
+  <!-- 季节横幅 -->
+  <view class="banner">
+    <text class="leaf l1">🍁</text>
+    <text class="leaf l2">🍃</text>
+    <text class="leaf l3">🍂</text>
+    <view class="banner-t">秋季活动季 · 开野啦！</view>
+    <view class="banner-s">荒野生存 × PBL × 文学戏剧 × 节庆文化</view>
+    <view class="bpill">本季 12 场 · {{openCount}} 场开放报名 ›</view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="quick">
+    <view wx:for="{{quicks}}" wx:key="label" class="q" hover-class="hv" bindtap="onQuick">
+      <view class="qi {{item.bg}}">{{item.icon}}</view>
+      <text class="ql">{{item.label}}</text>
+    </view>
+  </view>
+
+  <!-- 本季精选 -->
+  <view class="sec">
+    <text class="sec-t">本季精选</text>
+    <text class="more">全部 12 场 ›</text>
+  </view>
+
+  <view
+    wx:for="{{activities}}"
+    wx:key="id"
+    class="act-card"
+    hover-class="hv"
+    data-id="{{item.id}}"
+    bindtap="goDetail"
+  >
+    <view class="act-top">
+      <view class="emo {{item.emoBg}}">{{item.emoji}}</view>
+      <view class="tt">
+        <text class="tt-b">{{item.title}}</text>
+        <view class="tags">
+          <text wx:for="{{item.tags}}" wx:for-item="tg" wx:key="t" class="tag {{tg.c}}">{{tg.t}}</text>
+        </view>
+      </view>
+      <text class="pill {{item.statusType}}">{{item.status}}</text>
+    </view>
+
+    <view class="meta">📅 {{item.date}} · {{item.place}}</view>
+
+    <view class="seats">
+      <text class="seats-n {{item.full ? 'hot-t' : ''}}">{{item.seatsText}}</text>
+      <view class="bar">
+        <view class="bar-i {{item.full ? 'hot' : ''}}" style="width: {{item.percent}}%;"></view>
+      </view>
+    </view>
+
+    <view class="foot">
+      <text class="price">¥{{item.price}}<text class="price-s">/{{item.perUnit}}</text></text>
+      <text class="more">查看详情 ›</text>
+    </view>
+
+    <view wx:if="{{item.fullNote}}" class="fullnote">{{item.fullNote}}</view>
+  </view>
+
+  <!-- 预约中 -->
+  <view class="soon">
+    <view class="emo es">{{soon.emoji}}</view>
+    <view class="soon-mid">
+      <text class="soon-b">{{soon.title}}</text>
+      <text class="soon-s">{{soon.meta}}</text>
+    </view>
+    <text class="pill ps">预约中</text>
+  </view>
+
+</view>

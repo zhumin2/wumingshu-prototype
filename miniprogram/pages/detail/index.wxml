@@ -1,0 +1,122 @@
+<view class="wrap" wx:if="{{act}}">
+
+  <!-- 头图 -->
+  <view class="hero">
+    <text class="leaf">🍁</text>
+    <view class="hrow">
+      <text class="pill pg">{{act.status}}</text>
+    </view>
+    <view class="hemo">{{act.emoji}}</view>
+    <view class="htitle">{{act.title}}</view>
+    <view class="htags">
+      <text wx:for="{{act.heroTags}}" wx:key="*this" class="htag">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 信息 -->
+  <view class="cardp info">
+    <view class="irow"><text class="ic">📅</text><text class="lb">时间</text><text class="vl">{{act.date}}</text></view>
+    <view class="irow"><text class="ic">📍</text><text class="lb">地点</text><text class="vl">{{act.place}}</text></view>
+    <view class="irow"><text class="ic">👶</text><text class="lb">对象</text><text class="vl">{{act.ages}}</text></view>
+    <view class="irow"><text class="ic">⏰</text><text class="lb">签到</text><text class="vl">{{act.checkin}}</text></view>
+  </view>
+
+  <!-- 装备清单 -->
+  <view class="sec"><text class="sec-t">🎒 装备清单</text></view>
+  <view class="gear">
+    <text wx:for="{{act.gear}}" wx:key="*this" class="gear-i">{{item}}</text>
+  </view>
+
+  <!-- 流程安排 -->
+  <view class="sec"><text class="sec-t">⏱️ 流程安排</text></view>
+  <view class="cardp">
+    <view class="tl">
+      <view wx:for="{{act.schedule}}" wx:key="t" class="tl-row">
+        <text class="tl-t">{{item.t}}</text>
+        <view class="tl-dotcol">
+          <view class="tl-dot {{item.c}}"></view>
+          <view wx:if="{{index < act.schedule.length - 1}}" class="tl-ln"></view>
+        </view>
+        <text class="tl-tx">{{item.d}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 费用 -->
+  <view class="sec"><text class="sec-t">🎫 费用</text></view>
+  <view class="cardp">
+    <view class="fee">
+      <text class="price">¥{{act.price}}<text class="price-s">/{{act.perUnit}}</text></text>
+      <text class="fee-n">或扣 1 课时（秋季包剩余 4 课时）</text>
+      <text class="mem">会员同价</text>
+    </view>
+    <view class="feenote">{{act.feeNote}}</view>
+  </view>
+
+  <!-- 报名 -->
+  <view class="cta">
+    <view class="btn-p" hover-class="hv" bindtap="openSheet">{{btnLabel}}</view>
+    <view class="duo">
+      <view class="btn-g" hover-class="hv" bindtap="openSheet">🎫 扣课时报名</view>
+      <button class="btn-g share-btn" hover-class="hv" open-type="share">↗️ 分享给家长朋友</button>
+    </view>
+  </view>
+
+</view>
+
+<!-- ============ 报名弹层 ============ -->
+<block wx:if="{{sheetOpen}}">
+  <view class="sheet-mask" bindtap="closeSheet" catchtouchmove="noop"></view>
+  <view class="sheet" catchtap="noop" catchtouchmove="noop">
+
+    <view wx:if="{{!done}}">
+      <view class="grab"></view>
+      <view class="sh-head">
+        <text class="sh-t">报名确认</text>
+        <view class="xbtn" hover-class="hv" bindtap="closeSheet">✕</view>
+      </view>
+
+      <view class="flabel">选择参加的孩子</view>
+      <view class="kidrow">
+        <view
+          wx:for="{{children}}"
+          wx:key="id"
+          class="kid-chip {{selected[item.id] ? 'sel' : ''}}"
+          hover-class="hv"
+          data-id="{{item.id}}"
+          bindtap="toggleKid"
+        >
+          <text class="ka">{{item.emoji}}</text>
+          <view class="kmid">
+            <text class="kb">{{item.name}}</text>
+            <text class="ks">{{item.age}} 岁 · {{item.grade}}</text>
+          </view>
+          <view wx:if="{{selected[item.id]}}" class="tick">✓</view>
+        </view>
+      </view>
+
+      <view class="linkrow">🔒 联系人自动带入：小满妈妈 · 138****6688</view>
+
+      <checkbox-group class="consent" bindchange="onConsent">
+        <label class="consent-l">
+          <checkbox value="ok" checked="{{consent}}" color="#3E9B44" />
+          <text class="consent-t">我已阅读并同意《户外活动安全告知与照片使用授权》，已确认孩子健康状况适合参加。</text>
+        </label>
+      </checkbox-group>
+
+      <view class="su-sum">{{sumText}}</view>
+
+      <view class="btn-p" hover-class="hv" bindtap="submit">提交报名</view>
+    </view>
+
+    <view wx:else class="done">
+      <view class="de">🎉</view>
+      <view class="dt">报名成功！</view>
+      <view class="dd" wx:if="{{act.statusType !== 'pb'}}">已为所选孩子预留席位，请在 48 小时内完成缴费（或扣课时），超时席位将释放给候补家庭。</view>
+      <view class="dd" wx:else>已加入候补队列，如有家庭请假退出将按顺序递补，递补成功后会第一时间通知你。</view>
+      <view class="btn-p" hover-class="hv" bindtap="payNow">去缴费</view>
+      <view class="btn-g" hover-class="hv" bindtap="goPhotos">先去相册逛逛</view>
+    </view>
+
+  </view>
+</block>

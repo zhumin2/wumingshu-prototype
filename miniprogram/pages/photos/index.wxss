@@ -1,0 +1,92 @@
+/* ============ 活动相册 ============ */
+.ph-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8rpx 4rpx 20rpx;
+}
+.ph-t { font-size: 38rpx; font-weight: 800; }
+.lockpill {
+  font-size: 22rpx;
+  color: var(--sub);
+  border: 2rpx solid var(--border);
+  border-radius: 99rpx;
+  padding: 8rpx 20rpx;
+  background: var(--surface);
+}
+
+.seg { display: flex; gap: 16rpx; margin-bottom: 24rpx; }
+.fbtn {
+  font-size: 25rpx;
+  font-weight: 600;
+  padding: 14rpx 28rpx;
+  border-radius: 99rpx;
+  background: var(--surface);
+  border: 2rpx solid var(--border);
+  color: var(--sub);
+}
+.fbtn.on { background: var(--green); border-color: var(--green); color: #FFFFFF; }
+
+.alb { padding: 26rpx; }
+.alb-t { font-size: 28rpx; font-weight: 700; }
+
+.pgrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 24rpx;
+}
+.ph {
+  position: relative;
+  width: 222rpx;
+  height: 222rpx;
+  margin-bottom: 14rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pe { font-size: 56rpx; }
+.nm {
+  position: absolute;
+  left: 10rpx;
+  bottom: 10rpx;
+  font-size: 21rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(46, 122, 51, 0.88);
+  padding: 3rpx 14rpx;
+  border-radius: 99rpx;
+}
+.pg1 { background: linear-gradient(135deg, #BCE4A9, #7FC97F); }
+.pg2 { background: linear-gradient(135deg, #FFE4B5, #FFC46B); }
+.pg3 { background: linear-gradient(135deg, #C9E8F5, #8FCDE8); }
+.pg4 { background: linear-gradient(135deg, #FFDAD3, #FFB0A3); }
+.pg5 { background: linear-gradient(135deg, #E6DDF8, #C2AFEE); }
+.pg6 { background: linear-gradient(135deg, #FFF2CC, #FFDF86); }
+
+.cap {
+  display: block;
+  text-align: center;
+  font-size: 23rpx;
+  color: var(--sub);
+  margin: 24rpx 0 8rpx;
+}
+
+.soon {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-top: 20rpx;
+  background: var(--surface2);
+  border: 2rpx solid var(--border);
+  border-radius: 36rpx;
+  padding: 22rpx 26rpx;
+}
+.soon .emo { width: 76rpx; height: 76rpx; font-size: 38rpx; border-radius: 24rpx; }
+.ep { background: var(--plum-bg); }
+.soon-mid { flex: 1; min-width: 0; }
+.soon-b { display: block; font-size: 27rpx; font-weight: 700; }
+.soon-s { display: block; font-size: 23rpx; color: var(--sub); margin-top: 4rpx; }
+.soon-arrow { font-size: 34rpx; color: var(--sub); }

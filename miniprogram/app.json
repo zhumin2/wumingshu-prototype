@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/detail/index",
+    "pages/photos/index",
+    "pages/growth/index",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3E9B44",
+    "navigationBarTitleText": "无名树",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FFF7EA",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#837964",
+    "selectedColor": "#2C7A33",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "首页" },
+      { "pagePath": "pages/photos/index", "text": "相册" },
+      { "pagePath": "pages/growth/index", "text": "成长" },
+      { "pagePath": "pages/profile/index", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

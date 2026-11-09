@@ -1,0 +1,139 @@
+/* ============ 成长档案 ============ */
+.ph-head {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 4rpx 10rpx;
+}
+.ph-t { font-size: 38rpx; font-weight: 800; }
+
+.kids { display: flex; gap: 24rpx; padding: 8rpx 4rpx 24rpx; }
+.kb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  border-radius: 32rpx;
+  padding: 8rpx 18rpx;
+}
+.ka {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 99rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  background: var(--surface);
+  border: 4rpx solid var(--border);
+}
+.kbs { font-size: 24rpx; color: var(--sub); }
+.kb.on .ka { border-color: var(--green); background: var(--green-bg); }
+.kb.on .kbs { color: var(--green-deep); font-weight: 700; }
+
+.urow { display: flex; align-items: center; gap: 24rpx; }
+.uava {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 99rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54rpx;
+  background: linear-gradient(135deg, var(--green-bg), var(--sky-bg));
+  border: 2rpx solid var(--border);
+  flex-shrink: 0;
+}
+.un { flex: 1; min-width: 0; }
+.un-b { display: block; font-size: 30rpx; font-weight: 700; }
+.un-s { display: block; font-size: 23rpx; color: var(--sub); margin-top: 6rpx; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 12rpx; margin-top: 22rpx; }
+.bdg {
+  font-size: 24rpx;
+  font-weight: 700;
+  padding: 10rpx 24rpx;
+  border-radius: 99rpx;
+  display: inline-block;
+}
+.b1 { background: var(--sun-bg); color: var(--sun-deep); transform: rotate(-2deg); }
+.b2 { background: var(--plum-bg); color: var(--plum-deep); transform: rotate(1.5deg); }
+.b3 { background: var(--sky-bg); color: var(--sky-deep); transform: rotate(-1deg); }
+
+.stats { display: flex; gap: 16rpx; margin-top: 24rpx; }
+.st {
+  flex: 1;
+  background: var(--surface2);
+  border: 2rpx solid var(--border);
+  border-radius: 32rpx;
+  padding: 20rpx 8rpx;
+  text-align: center;
+}
+.st-v { font-size: 36rpx; font-weight: 800; color: var(--green-deep); }
+.st-l { font-size: 22rpx; color: var(--sub); margin-top: 4rpx; }
+
+.gline { margin-top: 12rpx; }
+.g-item { display: flex; gap: 20rpx; }
+.g-date {
+  flex-shrink: 0;
+  width: 110rpx;
+  text-align: center;
+  font-size: 23rpx;
+  font-weight: 700;
+  color: var(--green-deep);
+  background: var(--green-bg);
+  border-radius: 22rpx;
+  padding: 8rpx 0;
+  align-self: flex-start;
+}
+.g-dotcol { flex-shrink: 0; width: 22rpx; display: flex; flex-direction: column; align-items: center; }
+.g-dot { width: 16rpx; height: 16rpx; border-radius: 99rpx; background: var(--green); margin-top: 14rpx; }
+.g-dot.sun { background: var(--sun); }
+.g-dot.plum { background: var(--plum); }
+.g-ln { width: 4rpx; flex: 1; min-height: 36rpx; background: var(--border); }
+.g-body { flex: 1; min-width: 0; padding-bottom: 28rpx; }
+.g-t { display: block; font-size: 27rpx; font-weight: 700; }
+.g-q {
+  display: block;
+  font-size: 26rpx;
+  color: var(--text);
+  margin-top: 8rpx;
+  line-height: 1.6;
+}
+.g-by { display: block; font-size: 22rpx; color: var(--sub); margin-top: 8rpx; }
+.g-photos { display: flex; gap: 12rpx; margin-top: 14rpx; }
+.gp {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46rpx;
+}
+.pg1 { background: linear-gradient(135deg, #BCE4A9, #7FC97F); }
+.pg3 { background: linear-gradient(135deg, #C9E8F5, #8FCDE8); }
+.pg4 { background: linear-gradient(135deg, #FFDAD3, #FFB0A3); }
+.pg5 { background: linear-gradient(135deg, #E6DDF8, #C2AFEE); }
+
+.report {
+  margin-top: 8rpx;
+  border-radius: 40rpx;
+  padding: 30rpx;
+  background: linear-gradient(130deg, var(--sun-bg), var(--berry-bg));
+  border: 2rpx solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.rp-b { font-size: 29rpx; font-weight: 800; }
+.rp-s { font-size: 23rpx; color: var(--sub); margin-top: 8rpx; line-height: 1.6; }
+.rp-pill {
+  margin-top: 18rpx;
+  align-self: flex-start;
+  font-size: 22rpx;
+  font-weight: 700;
+  background: var(--surface);
+  border: 2rpx solid var(--border);
+  color: var(--sun-deep);
+  border-radius: 99rpx;
+  padding: 8rpx 24rpx;
+}

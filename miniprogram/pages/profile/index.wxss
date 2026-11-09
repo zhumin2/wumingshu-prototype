@@ -1,0 +1,89 @@
+/* ============ 我的 ============ */
+.gap { margin-top: 20rpx; }
+.tight { padding: 6rpx 24rpx; }
+
+.urow { display: flex; align-items: center; gap: 24rpx; }
+.uava {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52rpx;
+  background: linear-gradient(135deg, var(--green-bg), var(--sky-bg));
+  border: 2rpx solid var(--border);
+  flex-shrink: 0;
+}
+.un { flex: 1; min-width: 0; }
+.un-b { display: block; font-size: 32rpx; font-weight: 700; }
+.un-s { display: block; font-size: 23rpx; color: var(--sub); margin-top: 4rpx; }
+.vip {
+  font-size: 22rpx;
+  font-weight: 700;
+  padding: 8rpx 22rpx;
+  border-radius: 99rpx;
+  background: var(--sun-bg);
+  color: var(--sun-deep);
+  flex-shrink: 0;
+}
+
+.rowl {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 22rpx 4rpx;
+}
+.rowl + .rowl { border-top: 2rpx dashed var(--border); }
+.ric {
+  width: 64rpx;
+  height: 64rpx;
+  flex-shrink: 0;
+  border-radius: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+}
+.ric.eg { background: var(--green-bg); }
+.ric.ek { background: var(--sky-bg); }
+.ric.eb { background: var(--berry-bg); }
+.ri-sun { background: var(--sun-bg); }
+.ri-plum { background: var(--plum-bg); }
+.ri-sky { background: var(--sky-bg); }
+.rt { flex: 1; min-width: 0; }
+.rt-b { display: block; font-size: 27rpx; font-weight: 600; }
+.rt-s { display: block; font-size: 23rpx; color: var(--sub); margin-top: 4rpx; }
+.arrow { font-size: 32rpx; color: var(--sub); }
+
+.seats { display: flex; align-items: center; gap: 16rpx; margin: 4rpx 6rpx 8rpx; }
+.seats-n { flex-shrink: 0; font-size: 25rpx; font-weight: 700; }
+
+.regcard { padding: 6rpx 24rpx; }
+.reg-row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 22rpx 4rpx;
+}
+.reg-row + .reg-row { border-top: 2rpx dashed var(--border); }
+.reg-mid { flex: 1; min-width: 0; }
+.reg-t { display: block; font-size: 26rpx; font-weight: 600; }
+.reg-s { display: block; font-size: 22rpx; color: var(--sub); margin-top: 4rpx; }
+
+.authok {
+  flex-shrink: 0;
+  font-size: 21rpx;
+  font-weight: 700;
+  color: var(--green-deep);
+  background: var(--green-bg);
+  padding: 6rpx 16rpx;
+  border-radius: 99rpx;
+}
+
+.foot {
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--sub);
+  padding: 28rpx 0 12rpx;
+}

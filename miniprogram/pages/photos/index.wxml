@@ -1,0 +1,55 @@
+<view class="wrap">
+
+  <view class="ph-head">
+    <text class="ph-t">活动相册</text>
+    <text class="lockpill">🔒 仅本群家长可见</text>
+  </view>
+
+  <!-- 筛选 -->
+  <view class="seg">
+    <view class="fbtn {{filter === 'all' ? 'on' : ''}}" hover-class="hv" data-f="all" bindtap="setFilter">全部 {{album.total}}</view>
+    <view class="fbtn {{filter === 'mine' ? 'on' : ''}}" hover-class="hv" data-f="mine" bindtap="setFilter">只看{{kidName}} {{mineCount}}</view>
+  </view>
+
+  <!-- 相册信息 -->
+  <view class="cardp alb">
+    <view class="act-top">
+      <view class="emo eg">🌲</view>
+      <view class="tt">
+        <text class="alb-t">{{album.albumName}}</text>
+        <view class="tags"><text class="tag tg">{{album.albumMeta}}</text></view>
+      </view>
+    </view>
+    <view class="seats">
+      <text class="seats-n">已标注 {{album.tagged}} / {{album.total}}</text>
+      <view class="bar"><view class="bar-i" style="width: {{album.tagged / album.total * 100}}%;"></view></view>
+    </view>
+  </view>
+
+  <!-- 照片墙（示意占位） -->
+  <view class="pgrid">
+    <view
+      wx:for="{{shown}}"
+      wx:key="emoji"
+      class="ph {{item.bg}}"
+      hover-class="hv"
+      bindtap="onTapPhoto"
+    >
+      <text class="pe">{{item.emoji}}</text>
+      <text wx:if="{{item.mine}}" class="nm">{{kidName}}</text>
+    </view>
+  </view>
+
+  <text class="cap">{{cap}}</text>
+
+  <!-- 下一本相册 -->
+  <view class="soon">
+    <view class="emo ep">{{album.nextAlbum.emoji}}</view>
+    <view class="soon-mid">
+      <text class="soon-b">{{album.nextAlbum.name}}</text>
+      <text class="soon-s">{{album.nextAlbum.meta}}</text>
+    </view>
+    <text class="soon-arrow">›</text>
+  </view>
+
+</view>

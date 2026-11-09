@@ -1,0 +1,79 @@
+<view class="wrap">
+
+  <view class="ph-head">
+    <text class="ph-t">成长档案</text>
+  </view>
+
+  <!-- 孩子切换 -->
+  <view class="kids">
+    <view
+      wx:for="{{children}}"
+      wx:key="id"
+      class="kb {{activeIdx === index ? 'on' : ''}}"
+      hover-class="hv"
+      data-idx="{{index}}"
+      bindtap="switchKid"
+    >
+      <view class="ka">{{item.emoji}}</view>
+      <text class="kbs">{{item.name}} · {{item.age}}岁</text>
+    </view>
+  </view>
+
+  <block wx:if="{{child && active}}">
+
+    <!-- 档案卡 -->
+    <view class="cardp">
+      <view class="urow">
+        <view class="uava">{{child.emoji}}</view>
+        <view class="un">
+          <text class="un-b">{{child.name}} · {{child.age}} 岁 · {{child.grade}}</text>
+          <text class="un-s">加入无名树 {{child.joinedDays}} 天 · 本季已参加 {{child.seasonCount}} 场活动</text>
+        </view>
+      </view>
+      <view class="badges">
+        <text wx:for="{{active.badges}}" wx:key="t" class="bdg {{item.c}}">{{item.t}}</text>
+      </view>
+      <view class="stats">
+        <view wx:for="{{active.stats}}" wx:key="l" class="st">
+          <view class="st-v">{{item.v}}</view>
+          <view class="st-l">{{item.l}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 观察笔记 -->
+    <view class="sec"><text class="sec-t">📝 老师的观察笔记</text></view>
+    <view class="gline">
+      <view wx:for="{{active.notes}}" wx:key="date" class="g-item">
+        <view class="g-date">{{item.date}}</view>
+        <view class="g-dotcol">
+          <view class="g-dot {{item.dot}}"></view>
+          <view wx:if="{{index < active.notes.length - 1}}" class="g-ln"></view>
+        </view>
+        <view class="g-body">
+          <text class="g-t">{{item.title}}</text>
+          <text class="g-q">“{{item.quote}}”</text>
+          <text class="g-by">{{item.by}}</text>
+          <view wx:if="{{item.photos.length}}" class="g-photos">
+            <view
+              wx:for="{{item.photos}}"
+              wx:for-item="pc"
+              wx:for-index="pi"
+              wx:key="*this"
+              class="gp {{pc}}"
+            >{{item.photoEmoji[pi]}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 成长手册 -->
+    <view class="report">
+      <text class="rp-b">🍂 2026 秋季成长手册</text>
+      <text class="rp-s">12 月底自动生成 · 汇总 {{child.seasonCount}} 场活动记录与照片，可导出打印成纪念册</text>
+      <text class="rp-pill">敬请期待</text>
+    </view>
+
+  </block>
+
+</view>

@@ -1,0 +1,13 @@
+<view class="tabbar">
+  <view
+    wx:for="{{list}}"
+    wx:key="text"
+    class="tab {{selected === index ? 'on' : ''}}"
+    data-index="{{index}}"
+    hover-class="hv"
+    bindtap="switchTab"
+  >
+    <view class="tico">{{item.icon}}</view>
+    <text class="tlabel">{{item.text}}</text>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+{
+  "compileType": "miniprogram",
+  "miniprogramRoot": "miniprogram/",
+  "appid": "touristappid",
+  "projectname": "wumingshu-prototype",
+  "description": "无名树 · 家长端小程序（自然教育家长社群）",
+  "libVersion": "2.32.3",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "urlCheck": true,
+    "ignoreUploadUnusedFiles": true
+  },
+  "condition": {}
+}
